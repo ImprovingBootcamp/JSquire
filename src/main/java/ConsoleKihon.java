@@ -8,17 +8,17 @@ import java.util.Scanner;
 public class ConsoleKihon extends ConsoleKihonBase {
 
     @Override
-    protected void Write_FooBar_To_The_Console() {
+    protected void writeFooBarToTheConsole() {
         System.out.print("FooBar");
     }
 
     @Override
-    protected void WriteLine_FooBar_To_The_Console() {
+    protected void writeLineFooBarToTheConsole() {
         System.out.println("FooBar");
     }
 
     @Override
-    protected String Read_Line_From_Console_And_Return_Value() {
+    protected String readLineFromConsoleAndReturnValue() {
         return new Scanner(System.in).nextLine();
     }
 }

@@ -3,156 +3,155 @@ package framework;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public abstract class NumbersKihonBase {
-    protected abstract int Return_The_Maximum_Value_Of_Int32();
-    protected abstract int Return_The_Minimum_Value_Of_Int32();
-    protected abstract int Return_The_Remainder_Of_a_Divided_By_b(int a, int b);
-    protected abstract double Return_The_Maximum_Value_Of_Double();
-    protected abstract double Return_The_Minimum_Value_Of_Double();
-    protected abstract boolean Return_True_If_a_Is_Not_A_Number(double a);
-    protected abstract boolean Return_True_If_a_Is_An_Infinity(double a);
+    protected abstract int returnTheMaximumValueOfInt();
+    protected abstract int returnTheMinimumValueOfInt();
+    protected abstract int returnTheRemainderOfADividedByB(int a, int b);
+    protected abstract double returnTheMaximumValueOfDouble();
+    protected abstract double returnTheMinimumValueOfDouble();
+    protected abstract boolean returnTrueIfAIsNotANumber(double a);
+    protected abstract boolean returnTrueIfAIsAnInfinite(double a);
 
             @Test
-    public void Return_The_Maximum_Value_Of_Int32_Test()
+    public void returnTheMaximumValueOfIntTest()
     {
         // Arrange
 
 
         // Act
-        int result = Return_The_Maximum_Value_Of_Int32();
+        int result = returnTheMaximumValueOfInt();
 
         // Assert
         assertEquals(Integer.MAX_VALUE, result);
     }
 
         @Test
-    public void Return_The_Minimum_Value_Of_Int32_Test()
+    public void returnTheMinimumValueOfInt32Test()
     {
         // Arrange
 
 
         // Act
-        int result = Return_The_Minimum_Value_Of_Int32();
+        int result = returnTheMinimumValueOfInt();
 
         // Assert
         assertEquals(Integer.MIN_VALUE, result);
     }
 
         @Test
-    public void Return_The_Remainder_Of_a_Divided_By_b()
+    public void returnTheRemainderOfADividedByB()
     {
         // Arrange
         int a = 251;
         int b = 25;
 
         // Act
-        int remainder = Return_The_Remainder_Of_a_Divided_By_b(a, b);
+        int remainder = returnTheRemainderOfADividedByB(a, b);
 
         // Assert
         assertEquals(a % b, remainder);
     }
 
         @Test
-    public void Return_The_Maximum_Value_Of_Double_Test()
+    public void returnTheMaximumValueOfDoubleTest()
     {
         // Arrange
 
 
         // Act
-        double actual = Return_The_Maximum_Value_Of_Double();
+        double actual = returnTheMaximumValueOfDouble();
 
         // Assert
         assertEquals(Double.MAX_VALUE, actual);
     }
 
         @Test
-    public void Return_The_Minimum_Value_Of_Double_Test()
+    public void returnTheMinimumValueOfDoubleTest()
     {
         // Arrange
 
 
         // Act
-        double actual = Return_The_Minimum_Value_Of_Double();
+        double actual = returnTheMinimumValueOfDouble();
 
         // Assert
         assertEquals(Double.MIN_VALUE, actual);
     }
 
         @Test
-    public void Return_True_If_a_Is_Not_A_Number_Test1()
+    public void returnTrueIfAIsNotANumberTest1()
     {
         // Arrange
         double a = 1.24;
 
         // Act
-        var result = Return_True_If_a_Is_Not_A_Number(a);
+        var result = returnTrueIfAIsNotANumber(a);
 
         // Assert
         assertEquals(Double.isNaN(a), result);
     }
 
         @Test
-    public void Return_True_If_a_Is_Not_A_Number_Test2()
+    public void returnTrueIfAIsNotANumberTest2()
     {
         // Arrange
         double a = Double.NEGATIVE_INFINITY;
 
         // Act
-        var result = Return_True_If_a_Is_Not_A_Number(a);
+        var result = returnTrueIfAIsNotANumber(a);
 
         // Assert
         assertEquals(Double.isNaN(a), result);
     }
 
         @Test
-    public void Return_True_If_a_Is_Not_A_Number_Test3()
+    public void returnTrueIfAIsNotANumberTest3()
     {
         // Arrange
         double a = Double.NaN;
 
         // Act
-        var result = Return_True_If_a_Is_Not_A_Number(a);
+        var result = returnTrueIfAIsNotANumber(a);
 
         // Assert
         assertEquals(Double.isNaN(a), result);
     }
 
         @Test
-    public void Return_True_If_a_Is_An_Infinity_Test1()
+    public void returnTrueIfAIsAnInfinityTest1()
     {
         // Arrange
         double a = 1.24;
 
         // Act
-        var actual = Return_True_If_a_Is_An_Infinity(a);
+        var actual = returnTrueIfAIsAnInfinite(a);
 
         // Assert
         assertEquals(Double.isInfinite(a), actual);
     }
 
         @Test
-    public void Return_True_If_a_Is_An_Infinity_Test2()
+    public void returnTrueIfAIsAnInfinityTest2()
     {
         // Arrange
         double a = Double.NEGATIVE_INFINITY;
 
         // Act
-        var actual = Return_True_If_a_Is_An_Infinity(a);
+        var actual = returnTrueIfAIsAnInfinite(a);
 
         // Assert
         assertEquals(Double.isInfinite(a), actual);
     }
 
         @Test
-    public void Return_True_If_a_Is_An_Infinity_Test3()
+    public void returnTrueIfAIsAnInfinityTest3()
     {
         // Arrange
         double a = Double.POSITIVE_INFINITY;
 
         // Act
-        var actual = Return_True_If_a_Is_An_Infinity(a);
+        var actual = returnTrueIfAIsAnInfinite(a);
 
         // Assert
         assertEquals(Double.isInfinite(a), actual);

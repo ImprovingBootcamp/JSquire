@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import java.io.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public abstract class ConsoleKihonBase {
 
@@ -17,55 +16,55 @@ public abstract class ConsoleKihonBase {
     private final PrintStream originalOut = System.out;
     private final java.io.InputStream originalIn = System.in;
 
-    protected abstract void Write_FooBar_To_The_Console();
-    protected abstract void WriteLine_FooBar_To_The_Console();
-    protected abstract String Read_Line_From_Console_And_Return_Value();
+    protected abstract void writeFooBarToTheConsole();
+    protected abstract void writeLineFooBarToTheConsole();
+    protected abstract String readLineFromConsoleAndReturnValue();
 
     @BeforeEach
-    public void BeforeEachTest()
+    public void beforeEachTest()
     {
         System.setOut(new PrintStream(outContent));
         System.setIn(inContent);
     }
 
     @AfterEach
-    public void AfterEachTest() {
+    public void afterEachTest() {
         System.setOut(originalOut);
         System.setIn(originalIn);
     }
 
     @Test
-    public void Write_FooBar_To_The_Console_Test()
+    public void writeFooBarToTheConsoleTest()
     {
         // Arrange
 
 
         // Act
-        Write_FooBar_To_The_Console();
+        writeFooBarToTheConsole();
 
         // Assert
         assertEquals("FooBar", outContent.toString());
     }
 
     @Test
-    public void WriteLine_FooBar_To_The_Console_Test()
+    public void writeLineFooBarToTheConsoleTest()
     {
         // Arrange
 
 
         // Act
-        WriteLine_FooBar_To_The_Console();
+        writeLineFooBarToTheConsole();
 
         // Assert
         assertEquals("FooBar\r\n", outContent.toString());
     }
 
     @Test
-    public void Read_Line_From_Console_And_Return_Value_Test() {
+    public void readLineFromConsoleAndReturnValueTest() {
         // Arrange
 
         // Act
-        var actual = Read_Line_From_Console_And_Return_Value();
+        String actual = readLineFromConsoleAndReturnValue();
 
         // Assert
         assertEquals("This is a test of your code!!", actual);

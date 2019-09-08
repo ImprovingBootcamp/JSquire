@@ -5,13 +5,13 @@ import framework.StringKihonBase;
 public class StringKihon extends StringKihonBase {
 
     @Override
-    protected String Convert_To_Uppercase(String data) {
+    protected String convertToUpperCase(String data) {
 
-        return null;
+        return data.toUpperCase();
     }
 
     @Override
-    protected String Convert_To_Lowercase(String data) {
+    protected String convertToLowerCase(String data) {
 
         return data.toLowerCase();
     }
@@ -58,27 +58,27 @@ public class StringKihon extends StringKihonBase {
     }
 
     @Override
-    protected boolean Return_True_If_a_Contains_b(String a, String b) {
+    protected boolean returnTrueIfAContainsB(String a, String b) {
         return a.contains(b);
     }
 
     @Override
-    protected int Determine_The_Position_Of_a_In_b(String a, String b) {
+    protected int determineThePositionOfAInB(String a, String b) {
         return b.indexOf(a);
     }
 
     @Override
-    protected boolean Return_True_If_a_Starts_With_b(String a, String b) {
+    protected boolean returnTrueIfAStartsWithB(String a, String b) {
         return a.startsWith(b);
     }
 
     @Override
-    protected boolean Return_True_Is_a_Ends_With_b(String a, String b) {
+    protected boolean returnTrueIsAEndsWithB(String a, String b) {
         return a.endsWith(b);
     }
 
     @Override
-    protected String Return_The_Fourth_Through_Seventh_Characters_Of_Input(String input) {
+    protected String returnTheFourthThroughSeventhCharactersOfInput(String input) {
         return input.substring(4,7);
     }
 }

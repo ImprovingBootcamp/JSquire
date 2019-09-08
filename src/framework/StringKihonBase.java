@@ -112,6 +112,6 @@ public abstract class StringKihonBase {
         String actual = Return_The_Fourth_Through_Seventh_Characters_Of_Input(input);
 
         // Assert
-        assertEquals(input.substring(3,4), actual);
+        assertEquals(input.substring(4,7), actual);
     }
 }

@@ -19,7 +19,7 @@ public abstract class ConsoleKihonBase {
 
     protected abstract void Write_FooBar_To_The_Console();
     protected abstract void WriteLine_FooBar_To_The_Console();
-    protected abstract String Read_Line_From_Console_And_Return_Value() throws IOException;
+    protected abstract String Read_Line_From_Console_And_Return_Value();
 
     @BeforeEach
     public void BeforeEachTest()
@@ -61,7 +61,7 @@ public abstract class ConsoleKihonBase {
     }
 
     @Test
-    public void Read_Line_From_Console_And_Return_Value_Test() throws IOException {
+    public void Read_Line_From_Console_And_Return_Value_Test() {
         // Arrange
 
         // Act

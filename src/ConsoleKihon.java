@@ -3,6 +3,7 @@ import framework.ConsoleKihonBase;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class ConsoleKihon extends ConsoleKihonBase {
 
@@ -17,7 +18,7 @@ public class ConsoleKihon extends ConsoleKihonBase {
     }
 
     @Override
-    protected String Read_Line_From_Console_And_Return_Value() throws IOException {
-        return new BufferedReader(new InputStreamReader(System.in)).readLine();
+    protected String Read_Line_From_Console_And_Return_Value() {
+        return new Scanner(System.in).nextLine();
     }
 }

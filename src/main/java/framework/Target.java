@@ -1,6 +1,6 @@
 package framework;
 
-public interface ITarget
+public interface Target
 {
     void hit();
     boolean getIsValid();

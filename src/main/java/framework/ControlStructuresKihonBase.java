@@ -12,8 +12,8 @@ public abstract class ControlStructuresKihonBase {
     @Test
     public void callHitOnAIfValIsTrueElseCallHitOnBv1() {
         // Arrange
-        var a = mock(ITarget.class);
-        var b = mock(ITarget.class);
+        var a = mock(Target.class);
+        var b = mock(Target.class);
         boolean val = true;
 
         // Act
@@ -27,8 +27,8 @@ public abstract class ControlStructuresKihonBase {
     @Test
     public void callHitOnAIfValIsTrueElseCallHitOnBv2() {
         // Arrange
-        var a = mock(ITarget.class);
-        var b = mock(ITarget.class);
+        var a = mock(Target.class);
+        var b = mock(Target.class);
         boolean val = false;
 
         // Act
@@ -42,7 +42,7 @@ public abstract class ControlStructuresKihonBase {
     @Test
     public void callHitOnAOnceForEachMemberOfList() {
         // Arrange
-        var a = mock(ITarget.class);
+        var a = mock(Target.class);
         var list = new ArrayList<String>(Arrays.asList("a", "b", "c", "d"));
 
         // Act
@@ -55,7 +55,7 @@ public abstract class ControlStructuresKihonBase {
     @Test
     public void callHitOnAWhileAIsValidIsTrue() {
         // Arrange
-        var a = mock(ITarget.class);
+        var a = mock(Target.class);
         doReturn(true, true, true, true, false)
                 .when(a).getIsValid();
 
@@ -63,13 +63,13 @@ public abstract class ControlStructuresKihonBase {
         callHitOnAWhileAIsValidIsTrue(a);
 
         // Assert
-        verify(a);
+        verify(a, times(5)).getIsValid();
     }
 
     @Test
     public void nTimesCallHitOnA() {
         // Arrange
-        var a = mock(ITarget.class);
+        var a = mock(Target.class);
         var n = 132;
 
         // Act
@@ -82,7 +82,7 @@ public abstract class ControlStructuresKihonBase {
     @Test
     public void callHitOnAOnceAndContinueUntilIsValidIsFalse() {
         // Arrange
-        var a = mock(ITarget.class);
+        var a = mock(Target.class);
         doReturn(true, true, true, true, false)
                 .when(a).getIsValid();
 
@@ -93,14 +93,14 @@ public abstract class ControlStructuresKihonBase {
         verify(a, times(5)).hit();
     }
 
-    protected abstract void callHitOnAIfValIsTrueElseCallHitOnB(boolean val, ITarget a, ITarget b);
+    protected abstract void callHitOnAIfValIsTrueElseCallHitOnB(boolean val, Target a, Target b);
 
-    protected abstract void callHitOnAOnceForEachMemberOfList(ITarget a, Collection<String> list);
+    protected abstract void callHitOnAOnceForEachMemberOfList(Target a, Collection<String> list);
 
-    protected abstract void callHitOnAWhileAIsValidIsTrue(ITarget a);
+    protected abstract void callHitOnAWhileAIsValidIsTrue(Target a);
 
-    protected abstract void nTimesCallHitOnA(int n, ITarget a);
+    protected abstract void nTimesCallHitOnA(int n, Target a);
 
-    protected abstract void callHitOnAOnceAndLoopUntilIsValidIsFalse(ITarget a);
+    protected abstract void callHitOnAOnceAndLoopUntilIsValidIsFalse(Target a);
 
 }

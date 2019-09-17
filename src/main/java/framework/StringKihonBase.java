@@ -11,11 +11,11 @@ public abstract class StringKihonBase {
     protected abstract String convertToLowerCase(String data);
     protected abstract String combinePartsOfAName(String firstName, String middleName, String lastName);
     protected abstract String combineTwoStrings(String a, String b);
-    protected abstract int Determine_The_Length_Of_A_String(String data);
-    protected abstract String Remove_All_Leading_Whitespace(String data);
-    protected abstract String Remove_All_Trailing_Whitespace(String data);
-    protected abstract String[] Split_A_String_Into_An_Array(String input, char divider);
-    protected abstract String Join_An_Array_Into_A_String(String[] input, String divider);
+    protected abstract int determineTheLengthOfAString(String data);
+    protected abstract String removeAllLeadingWhitespace(String data);
+    protected abstract String removeAllTrailingWhitespace(String data);
+    protected abstract String[] splitAStringIntoAnArray(String input, char divider);
+    protected abstract String joinAnArrayIntoAString(String[] input, String divider);
     protected abstract boolean returnTrueIfAContainsB(String a, String b);
     protected abstract int determineThePositionOfAInB(String a, String b);
     protected abstract boolean returnTrueIfAStartsWithB(String a, String b);
@@ -23,39 +23,39 @@ public abstract class StringKihonBase {
     protected abstract String returnTheFourthThroughSeventhCharactersOfInput(String input);
 
     @Test
-    public void Determine_The_Length_Of_A_String()
+    public void determineTheLengthOfAString()
     {
         // Arrange
         String data = "This is a really long String with random data in it";
 
         // Act
-        int actual = Determine_The_Length_Of_A_String(data);
+        int actual = determineTheLengthOfAString(data);
 
         // Assert
         assertEquals(data.length(), actual);
     }
 
     @Test
-    public void Remove_All_Leading_Whitespace()
+    public void removeAllLeadingWhitespace()
     {
         // Arrange
         String data = "         data with whitespace pre-pended";
 
         // Act
-        String actual = Remove_All_Leading_Whitespace(data);
+        String actual = removeAllLeadingWhitespace(data);
 
         // Assert
         assertEquals(data.trim(), actual);
     }
 
     @Test
-    public void Remove_All_Trailing_Whitespace()
+    public void removeAllTrailingWhitespace()
     {
         // Arrange
         String data = "This is a test           ";
 
         // Act
-        String actual = Remove_All_Trailing_Whitespace(data);
+        String actual = removeAllTrailingWhitespace(data);
 
         // Assert
         assertEquals(data.trim(), actual);
@@ -185,14 +185,14 @@ public abstract class StringKihonBase {
     }
 
     @Test
-    public void Split_A_String_Into_An_Array()
+    public void splitAStringIntoAnArray()
     {
         // Arrange
         char divider = '|';
         String input = "this|is|a|test";
 
         // Act
-        String[] actual = Split_A_String_Into_An_Array(input, divider);
+        String[] actual = splitAStringIntoAnArray(input, divider);
 
         // Assert
 
@@ -200,14 +200,14 @@ public abstract class StringKihonBase {
     }
 
     @Test
-    public void Join_An_Array_Into_A_String()
+    public void joinAnArrayIntoAString()
     {
         // Arrange
         String divider = " ";
         String[] input = new String[] { "Timothy", "John", "Rayburn" };
 
         // Act
-        String actual = Join_An_Array_Into_A_String(input,divider);
+        String actual = joinAnArrayIntoAString(input,divider);
 
         // Assert
         assertEquals(String.join(divider,input), actual);

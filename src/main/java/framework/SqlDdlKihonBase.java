@@ -5,11 +5,14 @@ import org.junit.jupiter.api.Test;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SqlDdlKihonBase {
+public abstract class SqlDdlKihonBase {
     public static final String URL = "jdbc:sqlite::memory:";
+
+    public abstract String createTablePersonWithOneColumn();
 
     public void createNewDatabase() {
         try (Connection conn = DriverManager.getConnection(URL);
@@ -17,6 +20,51 @@ public class SqlDdlKihonBase {
             setupDatabase(conn);
         } catch (SQLException e) {
             fail("SQLException was thrown. " + e.toString());
+        }
+    }
+
+    @Test
+    public void createTablePersonWithOneColumnTest() {
+        try (Connection conn = DriverManager.getConnection(URL);
+             var stmt = conn.createStatement();) {
+            //setupDatabase(conn);
+
+            var sql = createTablePersonWithOneColumn();
+            assertFalse(stmt.execute(sql), "Your SQL did not run correctly.");
+
+            var assertTable = "SELECT * FROM sqlite_master where type='table' and tbl_name='Person'";
+            assertCount(stmt, assertTable, 1, "wrong number of tables");
+
+            var assertFields = "PRAGMA table_info(Person)";
+            assertCount(stmt, assertFields, 1, "wrong number of columns");
+        } catch (SQLException e) {
+            fail("SQLException was thrown. " + e.toString());
+        }
+    }
+
+    public void assertCount(Statement stmt, String sql, int count, String msg) {
+        int actualCount = 0;
+        try (var rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                actualCount++;
+            }
+            assertEquals(count, actualCount, msg);
+        } catch (Exception e) {
+            fail("Error : " + sql);
+        }
+    }
+
+    public void dumpSqlResults(Statement stmt, String sql) {
+        try (var rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                var colCount = rs.getMetaData().getColumnCount();
+                for (int i = 1; i <= colCount; i++) {
+                    System.out.println(rs.getMetaData().getColumnName(i) + " - " + rs.getString(i));
+                }
+                System.out.println("---");
+            }
+        } catch (Exception e) {
+            fail("Error : " + sql);
         }
     }
 
@@ -43,7 +91,7 @@ public class SqlDdlKihonBase {
 
     public void setupDatabase(Connection conn) throws SQLException {
         var stmt = conn.createStatement();
-        stmt.execute(createPersonTable());
+        //stmt.execute(createPersonTable());
         //stmt.execute(createAddressTable());
         //stmt.execute(samplePeople());
         //stmt.execute(sampleAddresses());

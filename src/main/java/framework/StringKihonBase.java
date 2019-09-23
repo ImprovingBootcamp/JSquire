@@ -8,23 +8,35 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public abstract class StringKihonBase {
     protected abstract String convertToUpperCase(String data);
+
     protected abstract String convertToLowerCase(String data);
+
     protected abstract String combinePartsOfAName(String firstName, String middleName, String lastName);
+
     protected abstract String combineTwoStrings(String a, String b);
+
     protected abstract int determineTheLengthOfAString(String data);
+
     protected abstract String removeAllLeadingWhitespace(String data);
+
     protected abstract String removeAllTrailingWhitespace(String data);
+
     protected abstract String[] splitAStringIntoAnArray(String input, char divider);
+
     protected abstract String joinAnArrayIntoAString(String[] input, String divider);
+
     protected abstract boolean returnTrueIfAContainsB(String a, String b);
+
     protected abstract int determineThePositionOfAInB(String a, String b);
+
     protected abstract boolean returnTrueIfAStartsWithB(String a, String b);
+
     protected abstract boolean returnTrueIsAEndsWithB(String a, String b);
+
     protected abstract String returnTheFourthThroughSeventhCharactersOfInput(String input);
 
     @Test
-    public void determineTheLengthOfAString()
-    {
+    public void determineTheLengthOfAString() {
         // Arrange
         String data = "This is a really long String with random data in it";
 
@@ -36,8 +48,7 @@ public abstract class StringKihonBase {
     }
 
     @Test
-    public void removeAllLeadingWhitespace()
-    {
+    public void removeAllLeadingWhitespace() {
         // Arrange
         String data = "         data with whitespace pre-pended";
 
@@ -49,8 +60,7 @@ public abstract class StringKihonBase {
     }
 
     @Test
-    public void removeAllTrailingWhitespace()
-    {
+    public void removeAllTrailingWhitespace() {
         // Arrange
         String data = "This is a test           ";
 
@@ -60,7 +70,7 @@ public abstract class StringKihonBase {
         // Assert
         assertEquals(data.trim(), actual);
     }
-    
+
     @Test
     void convertToUpperCase() {
         // Arrange
@@ -74,8 +84,7 @@ public abstract class StringKihonBase {
     }
 
     @Test
-    public void convertToLowerCase()
-    {
+    public void convertToLowerCase() {
         // Arrange
         String data = "THIS IS A SHOUTING PERSON!";
 
@@ -85,9 +94,9 @@ public abstract class StringKihonBase {
         // Assert
         assertEquals(data.toLowerCase(), actual);
     }
+
     @Test
-    public void combineTwoStrings()
-    {
+    public void combineTwoStrings() {
         // Arrange
         String a = "foo";
         String b = "bar";
@@ -100,24 +109,22 @@ public abstract class StringKihonBase {
     }
 
     @Test
-    public void combinePartsOfAName()
-    {
+    public void combinePartsOfAName() {
         // Arrange
         String middleName = "John";
         String firstName = "Timothy";
         String lastName = "Rayburn";
 
         // Act
-        String actual = combinePartsOfAName(firstName,middleName,lastName);
+        String actual = combinePartsOfAName(firstName, middleName, lastName);
 
         // Assert
-        assertEquals(String.format("{0} {1} {2}",firstName,middleName,lastName), actual);
+        assertEquals(String.format("%s %s %s", firstName, middleName, lastName), actual);
     }
 
 
     @Test
-    public void determineThePositionOfAInB()
-    {
+    public void determineThePositionOfAInB() {
         // Arrange
         String a = "summer";
         String b = "Now is the winter of our discontent, made glorious summer by the son of York.";
@@ -130,8 +137,7 @@ public abstract class StringKihonBase {
     }
 
     @Test
-    public void returnTrueIfAContainsB()
-    {
+    public void returnTrueIfAContainsB() {
         // Arrange
         String a = "This is a simple xyzzy exam";
         String b = "xyzzy";
@@ -144,8 +150,7 @@ public abstract class StringKihonBase {
     }
 
     @Test
-    public void returnTrueIfAStartsWithB()
-    {
+    public void returnTrueIfAStartsWithB() {
         // Arrange
         String a = "Fantastic Legendary Musciain";
         String b = "Fantastic Legen";
@@ -157,23 +162,21 @@ public abstract class StringKihonBase {
         assertTrue(actual);
     }
 
-        @Test
-    public void returnTrueIsAEndsWithB()
-    {
+    @Test
+    public void returnTrueIsAEndsWithB() {
         // Arrange
         String a = "This is a test";
         String b = "s a test";
 
         // Act
-        boolean actual = returnTrueIsAEndsWithB(a,b);
+        boolean actual = returnTrueIsAEndsWithB(a, b);
 
         // Assert
         assertTrue(actual);
     }
 
     @Test
-    public void returnTheFourthThroughSeventhCharactersOfInput()
-    {
+    public void returnTheFourthThroughSeventhCharactersOfInput() {
         // Arrange
         String input = "1234567890";
 
@@ -181,12 +184,11 @@ public abstract class StringKihonBase {
         String actual = returnTheFourthThroughSeventhCharactersOfInput(input);
 
         // Assert
-        assertEquals(input.substring(4,7), actual);
+        assertEquals(input.substring(4, 7), actual);
     }
 
     @Test
-    public void splitAStringIntoAnArray()
-    {
+    public void splitAStringIntoAnArray() {
         // Arrange
         char divider = '|';
         String input = "this|is|a|test";
@@ -200,16 +202,15 @@ public abstract class StringKihonBase {
     }
 
     @Test
-    public void joinAnArrayIntoAString()
-    {
+    public void joinAnArrayIntoAString() {
         // Arrange
         String divider = " ";
-        String[] input = new String[] { "Timothy", "John", "Rayburn" };
+        String[] input = new String[]{"Timothy", "John", "Rayburn"};
 
         // Act
-        String actual = joinAnArrayIntoAString(input,divider);
+        String actual = joinAnArrayIntoAString(input, divider);
 
         // Assert
-        assertEquals(String.join(divider,input), actual);
+        assertEquals(String.join(divider, input), actual);
     }
 }

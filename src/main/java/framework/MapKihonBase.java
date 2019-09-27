@@ -70,7 +70,8 @@ public abstract class MapKihonBase {
     @Test
     public void removeKeyFromMapTest() {
         // Arrange
-        Map<String, String> map = Map.of("improving", "Improving Bootcamp");
+        Map<String, String> map = new HashMap<>();
+        map.put("improving", "Improving Bootcamp");
 
         // Act
         removeKeyFromMap(map, "improving");

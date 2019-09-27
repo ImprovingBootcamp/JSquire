@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Map;
 
 import framework.MapKihonBase;
@@ -26,6 +27,11 @@ public class MapKihon extends MapKihonBase {
 
     @Override
     protected void removeKeyFromMap(Map<String, String> inputMap, String key) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    protected int countUniqueWordsInList(List<String> words) {
         throw new UnsupportedOperationException();
     }
 

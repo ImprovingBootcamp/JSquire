@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ public abstract class MapKihonBase {
     protected abstract String getTheValueAtThisKey(Map<String, String> inputMap, String key);
     protected abstract boolean doesMapContainKey(Map<String, String> inputMap, String input);
     protected abstract void removeKeyFromMap(Map<String, String> inputMap, String key);
+    protected abstract int countUniqueWordsInList(List<String> words);
 
     @Test
     public void createMapOfStringToStringTest() {
@@ -78,6 +80,19 @@ public abstract class MapKihonBase {
 
         // Assert
         assertTrue(map.isEmpty());
+    }
+
+    @Test
+    public void countUniqueWordsInListTest() {
+        // Arrange
+        List<String> words = List.of("austin", "austin", "texas", "aardvark",
+                "flower", "allison", "is", "awesome", "awesome", "awesome");
+
+        // Act
+        int result = countUniqueWordsInList(words);
+
+        // Assert
+        assertEquals(words.stream().distinct().count(), result);
     }
 
 }

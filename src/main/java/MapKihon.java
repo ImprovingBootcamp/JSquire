@@ -1,7 +1,7 @@
+import framework.MapKihonBase;
+
 import java.util.List;
 import java.util.Map;
-
-import framework.MapKihonBase;
 
 public class MapKihon extends MapKihonBase {
 

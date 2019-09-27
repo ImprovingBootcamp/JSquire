@@ -12,6 +12,8 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/checkstyle-idea.xml
+.idea/codeStyles
 
 # Generated files
 .idea/**/contentModel.xml
@@ -83,4 +85,6 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
+# Maven things
+target/
 # End of https://www.gitignore.io/api/intellij

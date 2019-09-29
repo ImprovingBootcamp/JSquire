@@ -1,23 +1,25 @@
-package framework;
+package framework.bases;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
 
 public abstract class MapKihonBase {
     protected abstract Map<String, String> createMapOfStringToString();
+
     protected abstract void addKeyAndValueToMap(Map<String, String> inputMap, String key, String value);
+
     protected abstract String getTheValueAtThisKey(Map<String, String> inputMap, String key);
+
     protected abstract boolean doesMapContainKey(Map<String, String> inputMap, String input);
+
     protected abstract void removeKeyFromMap(Map<String, String> inputMap, String key);
-    protected abstract int countUniqueWordsInList(List<String> words);
+
+    protected abstract int countUniqueWordsInList(List<String> inputWords);
 
     @Test
     public void createMapOfStringToStringTest() {

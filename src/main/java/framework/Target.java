@@ -1,7 +1,7 @@
 package framework;
 
-public interface Target
-{
+public interface Target {
     void hit();
-    boolean getIsValid();
+
+    boolean isValid();
 }

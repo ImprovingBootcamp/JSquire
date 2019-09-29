@@ -1,4 +1,4 @@
-package framework;
+package framework.bases;
 
 import org.junit.jupiter.api.Test;
 
@@ -40,21 +40,21 @@ public abstract class SqlKihonBase {
 
             setupDatabase(conn);
             stmt.execute(updateAllLastNamesRayburnToJohnsonInPerson());
-            assertEquals(stmt.getUpdateCount(),2);
+            assertEquals(stmt.getUpdateCount(), 2);
 
             int count = 0;
             var johnsonRS = stmt.executeQuery("select count(*) as count from Person where LastName = 'Johnson'");
             while (johnsonRS.next()) {
                 count = johnsonRS.getInt("count");
             }
-            assertEquals(2,count);
+            assertEquals(2, count);
 
             count = 0;
             var rayburnRS = stmt.executeQuery("select count(*) as count from Person where LastName = 'Rayburn'");
             while (rayburnRS.next()) {
                 count = rayburnRS.getInt("count");
             }
-            assertEquals(0,count);
+            assertEquals(0, count);
         } catch (SQLException e) {
             fail("SQLException was thrown. " + e.toString());
         }
@@ -67,12 +67,12 @@ public abstract class SqlKihonBase {
             int count = 0;
             setupDatabase(conn);
             stmt.execute(insertPersonId4NamedMikeJohnsonAge5ToPerson());
-            assertEquals(stmt.getUpdateCount(),1);
+            assertEquals(stmt.getUpdateCount(), 1);
             var rs = stmt.executeQuery("select * from person where firstName = 'Mike' and lastname = 'Johnson' and Age = 5");
             while (rs.next()) {
                 count += 1;
             }
-            assertEquals(1,count);
+            assertEquals(1, count);
         } catch (SQLException e) {
             fail("SQLException was thrown. " + e.toString());
         }
@@ -89,7 +89,7 @@ public abstract class SqlKihonBase {
                 assertEquals(11, rs.getMetaData().getColumnCount());
                 count += 1;
             }
-            assertEquals(3,count);
+            assertEquals(3, count);
         } catch (SQLException e) {
             fail("SQLException was thrown. " + e.toString());
         }
@@ -106,7 +106,7 @@ public abstract class SqlKihonBase {
                 assertEquals(1, rs.getMetaData().getColumnCount());
                 count += 1;
             }
-            assertEquals(2,count);
+            assertEquals(2, count);
         } catch (SQLException e) {
             fail("SQLException was thrown. " + e.toString());
         }
@@ -123,7 +123,7 @@ public abstract class SqlKihonBase {
                 assertEquals(11, rs.getMetaData().getColumnCount());
                 count += 1;
             }
-            assertEquals(1,count);
+            assertEquals(1, count);
         } catch (SQLException e) {
             fail("SQLException was thrown. " + e.toString());
         }
@@ -140,7 +140,7 @@ public abstract class SqlKihonBase {
                 assertEquals(4, rs.getMetaData().getColumnCount());
                 count += 1;
             }
-            assertEquals(3,count);
+            assertEquals(3, count);
         } catch (SQLException e) {
             fail("SQLException was thrown. " + e.toString());
         }
@@ -148,7 +148,7 @@ public abstract class SqlKihonBase {
 
     public void sampleTest() {
         try (Connection conn = DriverManager.getConnection(URL);
-             var stmt = conn.createStatement();) {
+             var stmt = conn.createStatement()) {
             setupDatabase(conn);
             try (var rs = stmt.executeQuery("select count(*) as count from Person;")) {
                 while (rs.next()) {

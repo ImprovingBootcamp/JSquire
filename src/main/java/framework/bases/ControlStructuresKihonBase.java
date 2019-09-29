@@ -1,5 +1,6 @@
-package framework;
+package framework.bases;
 
+import framework.Target;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public abstract class ControlStructuresKihonBase {
     public void callHitOnAOnceForEachMemberOfList() {
         // Arrange
         var a = mock(Target.class);
-        var list = new ArrayList<String>(Arrays.asList("a", "b", "c", "d"));
+        var list = new ArrayList<>(Arrays.asList("a", "b", "c", "d"));
 
         // Act
         callHitOnAOnceForEachMemberOfList(a, list);
@@ -57,13 +58,13 @@ public abstract class ControlStructuresKihonBase {
         // Arrange
         var a = mock(Target.class);
         doReturn(true, true, true, true, false)
-                .when(a).getIsValid();
+                .when(a).isValid();
 
         // Act
         callHitOnAWhileAIsValidIsTrue(a);
 
         // Assert
-        verify(a, times(5)).getIsValid();
+        verify(a, times(5)).isValid();
     }
 
     @Test
@@ -84,7 +85,7 @@ public abstract class ControlStructuresKihonBase {
         // Arrange
         var a = mock(Target.class);
         doReturn(true, true, true, true, false)
-                .when(a).getIsValid();
+                .when(a).isValid();
 
         // Act
         callHitOnAOnceAndLoopUntilIsValidIsFalse(a);

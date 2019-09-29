@@ -1,5 +1,6 @@
-import framework.SqlDdlKihonBase;
-import org.junit.jupiter.api.Test;
+package kihons;
+
+import framework.bases.SqlDdlKihonBase;
 
 public class SqlDdlKihon extends SqlDdlKihonBase {
     @Override

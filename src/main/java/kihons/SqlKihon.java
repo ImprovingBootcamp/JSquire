@@ -1,4 +1,7 @@
-import framework.SqlKihonBase;
+package kihons;
+
+import framework.exceptions.NotImplementedYetException;
+import framework.bases.SqlKihonBase;
 
 public class SqlKihon extends SqlKihonBase {
 
@@ -26,31 +29,31 @@ public class SqlKihon extends SqlKihonBase {
 
     @Override
     protected String Select_All_Fields_And_Rows_From_Person() {
-        throw new UnsupportedOperationException();
+        throw new NotImplementedYetException();
     }
 
     @Override
     protected String selectAllFieldsFromPersonJoinedToAddress() {
-        throw new UnsupportedOperationException();
+        throw new NotImplementedYetException();
     }
 
     @Override
     protected String selectFirstNameFromPersonWhereLastNameEqualsRayburn() {
-        throw new UnsupportedOperationException();
+        throw new NotImplementedYetException();
     }
 
     @Override
     protected String selectAllFieldsFromPersonLeftOuterJoinedToAddress() {
-        throw new UnsupportedOperationException();
+        throw new NotImplementedYetException();
     }
 
     @Override
     protected String insertPersonId4NamedMikeJohnsonAge5ToPerson() {
-        throw new UnsupportedOperationException();
+        throw new NotImplementedYetException();
     }
 
     @Override
     protected String updateAllLastNamesRayburnToJohnsonInPerson() {
-        throw new UnsupportedOperationException();
+        throw new NotImplementedYetException();
     }
 }

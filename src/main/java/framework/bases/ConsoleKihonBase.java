@@ -1,10 +1,12 @@
-package framework;
+package framework.bases;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -17,12 +19,13 @@ public abstract class ConsoleKihonBase {
     private final java.io.InputStream originalIn = System.in;
 
     protected abstract void writeFooBarToTheConsole();
+
     protected abstract void writeLineFooBarToTheConsole();
+
     protected abstract String readLineFromConsoleAndReturnValue();
 
     @BeforeEach
-    public void beforeEachTest()
-    {
+    public void beforeEachTest() {
         System.setOut(new PrintStream(outContent));
         System.setIn(inContent);
     }
@@ -34,8 +37,7 @@ public abstract class ConsoleKihonBase {
     }
 
     @Test
-    public void writeFooBarToTheConsoleTest()
-    {
+    public void writeFooBarToTheConsoleTest() {
         // Arrange
 
 
@@ -47,8 +49,7 @@ public abstract class ConsoleKihonBase {
     }
 
     @Test
-    public void writeLineFooBarToTheConsoleTest()
-    {
+    public void writeLineFooBarToTheConsoleTest() {
         // Arrange
 
 

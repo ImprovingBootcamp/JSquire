@@ -87,4 +87,5 @@ fabric.properties
 
 # Maven things
 target/
+
 # End of https://www.gitignore.io/api/intellij

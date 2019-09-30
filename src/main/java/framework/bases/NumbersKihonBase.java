@@ -1,4 +1,4 @@
-package framework;
+package framework.bases;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,16 +6,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class NumbersKihonBase {
     protected abstract int returnTheMaximumValueOfInt();
+
     protected abstract int returnTheMinimumValueOfInt();
+
     protected abstract int returnTheRemainderOfADividedByB(int a, int b);
+
     protected abstract double returnTheMaximumValueOfDouble();
+
     protected abstract double returnTheMinimumValueOfDouble();
+
     protected abstract boolean returnTrueIfAIsNotANumber(double a);
+
     protected abstract boolean returnTrueIfAIsAnInfinite(double a);
 
-            @Test
-    public void returnTheMaximumValueOfIntTest()
-    {
+    @Test
+    public void returnTheMaximumValueOfIntTest() {
         // Arrange
 
 
@@ -26,9 +31,8 @@ public abstract class NumbersKihonBase {
         assertEquals(Integer.MAX_VALUE, result);
     }
 
-        @Test
-    public void returnTheMinimumValueOfInt32Test()
-    {
+    @Test
+    public void returnTheMinimumValueOfInt32Test() {
         // Arrange
 
 
@@ -39,9 +43,8 @@ public abstract class NumbersKihonBase {
         assertEquals(Integer.MIN_VALUE, result);
     }
 
-        @Test
-    public void returnTheRemainderOfADividedByB()
-    {
+    @Test
+    public void returnTheRemainderOfADividedByB() {
         // Arrange
         int a = 251;
         int b = 25;
@@ -53,9 +56,8 @@ public abstract class NumbersKihonBase {
         assertEquals(a % b, remainder);
     }
 
-        @Test
-    public void returnTheMaximumValueOfDoubleTest()
-    {
+    @Test
+    public void returnTheMaximumValueOfDoubleTest() {
         // Arrange
 
 
@@ -66,9 +68,8 @@ public abstract class NumbersKihonBase {
         assertEquals(Double.MAX_VALUE, actual);
     }
 
-        @Test
-    public void returnTheMinimumValueOfDoubleTest()
-    {
+    @Test
+    public void returnTheMinimumValueOfDoubleTest() {
         // Arrange
 
 
@@ -79,9 +80,8 @@ public abstract class NumbersKihonBase {
         assertEquals(Double.MIN_VALUE, actual);
     }
 
-        @Test
-    public void returnTrueIfAIsNotANumberTest1()
-    {
+    @Test
+    public void returnTrueIfAIsNotANumberTest1() {
         // Arrange
         double a = 1.24;
 
@@ -92,9 +92,8 @@ public abstract class NumbersKihonBase {
         assertEquals(Double.isNaN(a), result);
     }
 
-        @Test
-    public void returnTrueIfAIsNotANumberTest2()
-    {
+    @Test
+    public void returnTrueIfAIsNotANumberTest2() {
         // Arrange
         double a = Double.NEGATIVE_INFINITY;
 
@@ -105,9 +104,8 @@ public abstract class NumbersKihonBase {
         assertEquals(Double.isNaN(a), result);
     }
 
-        @Test
-    public void returnTrueIfAIsNotANumberTest3()
-    {
+    @Test
+    public void returnTrueIfAIsNotANumberTest3() {
         // Arrange
         double a = Double.NaN;
 
@@ -118,9 +116,8 @@ public abstract class NumbersKihonBase {
         assertEquals(Double.isNaN(a), result);
     }
 
-        @Test
-    public void returnTrueIfAIsAnInfinityTest1()
-    {
+    @Test
+    public void returnTrueIfAIsAnInfinityTest1() {
         // Arrange
         double a = 1.24;
 
@@ -131,9 +128,8 @@ public abstract class NumbersKihonBase {
         assertEquals(Double.isInfinite(a), actual);
     }
 
-        @Test
-    public void returnTrueIfAIsAnInfinityTest2()
-    {
+    @Test
+    public void returnTrueIfAIsAnInfinityTest2() {
         // Arrange
         double a = Double.NEGATIVE_INFINITY;
 
@@ -144,9 +140,8 @@ public abstract class NumbersKihonBase {
         assertEquals(Double.isInfinite(a), actual);
     }
 
-        @Test
-    public void returnTrueIfAIsAnInfinityTest3()
-    {
+    @Test
+    public void returnTrueIfAIsAnInfinityTest3() {
         // Arrange
         double a = Double.POSITIVE_INFINITY;
 

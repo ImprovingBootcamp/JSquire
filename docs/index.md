@@ -11,7 +11,7 @@ to receive feedback without the direct involvement of an instructor.
 ### How to use as a Student
 
 Clone this repository locally, open the project in IntelliJ, then open your
-first drill (we recommend `StringKihon`).  Attempt to fill in all of the methods
+first drill (we recommend `kihons.StringKihon`).  Attempt to fill in all of the methods
 with correct answers, then run all of the Unit Tests (`Ctrl-Shift-F10` by default).
 Any Unit Test which does not pass indicates you have an incorrect answer which
 you should revisit.
@@ -30,7 +30,9 @@ is not available, then this page contains solutions to all of the Kihons below.
 Kihon is a term borrowed from the Martial Arts, just as Kata is also borrowed.
 [Wikipedia defines it as follows](https://en.wikipedia.org/wiki/Kihon):
 
-> Kihon (基本, きほん) is a Japanese term meaning "basics" or "fundamentals." The term is used to refer to the basic techniques that are taught and practiced as the foundation of most Japanese martial arts. Kihon in martial arts can be seen as analogous to basic skills in, for example, basketball.
+> Kihon (基本, きほん) is a Japanese term meaning "basics" or "fundamentals." 
+> The term is used to refer to the basic techniques that are taught and practiced as the foundation of most Japanese 
+> martial arts. Kihon in martial arts can be seen as analogous to basic skills in, for example, basketball.
 
 These drills are meant to reinforce the fundamentals, they are not a complex form
 meant to recreate real world scenarios (the rough definition of Kata) but instead

@@ -1,19 +1,21 @@
-import framework.ConsoleKihonBase;
-import java.util.Scanner;
+package kihons;
+
+import framework.bases.ConsoleKihonBase;
+import framework.exceptions.NotImplementedYetException;
 
 public class ConsoleKihon extends ConsoleKihonBase {
     @Override
     protected void writeFooBarToTheConsole() {
-        throw new UnsupportedOperationException();
+        throw new NotImplementedYetException();
     }
 
     @Override
     protected void writeLineFooBarToTheConsole() {
-        throw new UnsupportedOperationException();
+        throw new NotImplementedYetException();
     }
 
     @Override
     protected String readLineFromConsoleAndReturnValue() {
-        throw new UnsupportedOperationException();
+        throw new NotImplementedYetException();
     }
 }

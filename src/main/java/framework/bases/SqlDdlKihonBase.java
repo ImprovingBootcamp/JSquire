@@ -1,4 +1,4 @@
-package framework;
+package framework.bases;
 
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +26,7 @@ public abstract class SqlDdlKihonBase {
     @Test
     public void createTablePersonWithOneColumnTest() {
         try (Connection conn = DriverManager.getConnection(URL);
-             var stmt = conn.createStatement();) {
+             var stmt = conn.createStatement()) {
             //setupDatabase(conn);
 
             var sql = createTablePersonWithOneColumn();
@@ -71,7 +71,7 @@ public abstract class SqlDdlKihonBase {
     @Test
     public void sampleTest() {
         try (Connection conn = DriverManager.getConnection(URL);
-             var stmt = conn.createStatement();) {
+             var stmt = conn.createStatement()) {
             setupDatabase(conn);
             var sql = "select * from sqlite_master;";
             var sql2 = "PRAGMA table_info(Person)";

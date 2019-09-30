@@ -1,4 +1,4 @@
-package framework;
+package framework.bases;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public abstract class FileOperationsKihonBase {
     public abstract String getContentsOfThisFile(Path pathOfFile) throws IOException;
+
     public abstract void writeContentsToThisFile(Path pathOfFile, String contents) throws IOException;
 
     @Test

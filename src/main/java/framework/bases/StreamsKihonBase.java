@@ -39,8 +39,8 @@ public abstract class StreamsKihonBase {
     @Test
     void sortOnCostFromLestToMostExpensiveAllItemsThatCostLessThanOrEqualToMyMonies() {
         List<Item> expectedItems = new ArrayList<>();
-        expectedItems.add(items.get(7));
         expectedItems.add(items.get(6));
+        expectedItems.add(items.get(7));
         expectedItems.add(items.get(0));
         expectedItems.add(items.get(2));
         List<Item> result = sortOnCostFromLestToMostExpensiveAllItemsThatCostLessThanOrEqualToMyMonies(items, 666);

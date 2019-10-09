@@ -9,6 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public abstract class ConsoleKihonBase {
 
@@ -40,7 +41,6 @@ public abstract class ConsoleKihonBase {
     public void writeFooBarToTheConsoleTest() {
         // Arrange
 
-
         // Act
         writeFooBarToTheConsole();
 
@@ -52,12 +52,14 @@ public abstract class ConsoleKihonBase {
     public void writeLineFooBarToTheConsoleTest() {
         // Arrange
 
-
         // Act
         writeLineFooBarToTheConsole();
 
         // Assert
-        assertEquals("FooBar\r\n", outContent.toString());
+        String outString = outContent.toString();
+        boolean windowsCheck = "FooBar\r\n".equals(outString);
+        boolean macCheck = "FooBar\n".equals(outString);
+        assertTrue(windowsCheck || macCheck);
     }
 
     @Test
